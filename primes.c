@@ -6,6 +6,7 @@
 */
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
 
 // function declaration
 void printArray(int*, int);
@@ -22,6 +23,11 @@ void main() {
   // we are relying on fact that all primes greater than 3 are a multiple of 6 + - 1
   int multipleOf6 = 6;
   int i;
+
+  // store start time
+  struct timeval begin, end;
+  gettimeofday(&begin, NULL);
+
   for(i = 0; i < primeCount;) {
     // handle cases of i == 0 || i == 1
     if(i == 0){
@@ -69,8 +75,16 @@ void main() {
 
   }
 
+  // get end time , calculate and display time elapsed
+  gettimeofday(&end, NULL);
+  double elapsed = (end.tv_sec - begin.tv_sec)*1000
+                 + ((end.tv_usec - begin.tv_usec)/1000.0);
+
   // display results
   printArray(primes, primeCount);
+
+  printf("\n%d prime numbers took %3f seconds to calculate\n\n", primeCount, elapsed);
+
 
 }
 
