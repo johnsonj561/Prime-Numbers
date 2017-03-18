@@ -7,6 +7,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<math.h>
 
 // function declaration
 void printArray(int*, int);
@@ -28,7 +29,7 @@ void main() {
   struct timeval begin, end;
   gettimeofday(&begin, NULL);
 
-  for(i = 0; i < primeCount;) {
+  for(i = 0; i < primeCount; ) {
     // handle cases of i == 0 || i == 1
     if(i == 0){
       primes[i++] = 2;
@@ -46,7 +47,7 @@ void main() {
       int value = multipleOf6 - 1;
       int j;
       int isPrime = 1;
-      for(j = 0; j < i - 1; j++) {
+      for(j = 0; j < sqrt(i); j++) {
         if(value % primes[j] == 0) {
           isPrime = 0;
         }
