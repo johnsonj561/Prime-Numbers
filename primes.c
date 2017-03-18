@@ -97,7 +97,7 @@ void printArray(int* a, int length) {
 int getUserInput() {
   int input;
   printf("\n\n**********************************\n");
-  printf("* WELCOME TO PRIME NUMBER COUNER *\n");
+  printf("* WELCOME TO PRIME NUMBER COUNTER *\n");
  printf("**********************************\n");
   printf("How many prime numbers do you want to see?\n");
   scanf("%d", &input);
